@@ -1,0 +1,82 @@
+
+.navbar-default.sidebar {
+    background-color: #3D3BF3; /* Warna biru */
+    border-color: #3D3BF3; /* Warna border */
+    position: fixed; /* Sidebar tetap di tempat */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 250px; /* Lebar sidebar */
+    overflow-y: auto; /* Scroll jika konten melebihi tinggi layar */
+    z-index: 1000; /* Pastikan sidebar di atas konten lain */
+}
+
+.navbar-default.sidebar .nav > li {
+    width: 250px; /* Lebar sesuai sidebar */
+    height: 75px; /* Tinggi setiap item */
+    display: flex; /* Menggunakan flexbox untuk tata letak */
+    align-items: center; /* Pusatkan konten vertikal */
+    justify-content: flex-start; /* Mulai dari kiri */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Garis pembatas antar item */
+}
+
+.navbar-default.sidebar .nav > li > a {
+    width: 100%; /* Lebar penuh */
+    height: 100%; /* Tinggi penuh */
+    display: flex; /* Menggunakan flexbox untuk tata letak */
+    align-items: center; /* Pusatkan konten vertikal */
+    padding-left: 20px; /* Padding kiri untuk teks dan ikon */
+    color: #EBEAFF; /* Warna teks */
+    text-decoration: none; /* Hilangkan underline */
+}
+
+.navbar-default.sidebar .nav > li > a:hover,
+.navbar-default.sidebar .nav > li > a:focus {
+    background-color: rgb(78, 77, 148); /* Warna latar belakang saat hover */
+    color: #ffffff; /* Warna teks saat hover */
+}
+
+.navbar-default.sidebar .nav > li > a i {
+    margin-right: 10px; /* Jarak antara ikon dan teks */
+    color: #ffffff; /* Warna ikon */
+}
+
+
+.navbar-default.navbar-static-top {
+    background-color: #ffffff; /* Warna putih */
+    border-color: #e7e7e7; /* Warna border */
+    position: fixed; /* Navbar tetap di tempat */
+    width: 100%;
+    top: 0;
+    z-index: 100; /* Pastikan navbar di atas sidebar */
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #333333; /* Warna teks gelap */
+}
+
+.navbar-default .navbar-brand {
+    color: #FF2929; /* Warna teks merah */
+}
+.nama-user {
+    color: #FF2929; /* Warna teks merah */
+}
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus {
+    background-color: #f8f8f8; /* Warna latar belakang saat dropdown terbuka */
+    color: #333333; /* Warna teks gelap */
+}
+
+/* Padding untuk konten agar tidak tertutup sidebar dan navbar */
+.page-header {
+    padding-top: 35px; /* Geser teks ke bawah 5px */
+}
+/* Main Content */
+#page-wrapper {
+    background-color:rgb(231, 226, 226); /* Warna latar belakang */
+    margin-left: 250px; /* Sesuaikan dengan lebar sidebar */
+    padding-top: 50px; /* Sesuaikan dengan tinggi navbar header */
+    min-height: 100vh; /* Pastikan konten memenuhi tinggi layar */
+}
+
