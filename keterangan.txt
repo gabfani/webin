@@ -1,9 +1,19 @@
 
-ADMIN -> -Data Admin
+ADMIN -> -Data Rak
+		 -Data Supplier
+		 -Data Barang
+		 -Data Barang Masuk
+		 -Data Barang Keluar
+
+SUPERADMIN -> -Data Admin
 		 -Data Rak
 		 -Data Supplier
 		 -Data Barang
+		 -Data Barang Masuk
 		 -Data Barang Keluar
 
-PETUGAS ->-Data Barang Masuk
-		  -Data Ajuan
+PETUGAS->-Data Ajuan
+
+admin -> admin, admin
+petugas -> petugas, petugas
+superadmin -> min1, admin
