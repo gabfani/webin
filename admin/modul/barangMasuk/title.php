@@ -72,15 +72,14 @@
                   <i class="fa fa-dashboard"></i> Beranda
                 </a>
               </li>
-              <li>
+              <!--<li>
                 <a href="?m=admin&s=awal">
                   <i class="fa fa-user"></i> Data Admin
                 </a>
-                <li>
+                <li>-->
                 <a href="?m=petugas&s=awal">
                   <i class="fa fa-users"></i> Data Petugas
                 </a>
-              </li>
               </li>
                             <li>
                 <a href="?m=supplier&s=awal">
