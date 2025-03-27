@@ -200,15 +200,17 @@ document.getElementById('cetakLink').addEventListener('click', function(event) {
         <script type="text/javascript">
           <?php echo $jsArray; ?>
           function changeValue(id){
-            document.getElementById('prd_tanggal').value = prdName[id].tanggal_ajuan;
-            document.getElementById('prd_petugas').value = prdName[id].petugas;
-            document.getElementById('prd_kodebrng').value = prdName[id].kode_brg;
-            document.getElementById('prd_namabrg').value = prdName[id].nama_brg;
-            document.getElementById('prd_stokbrga').value = prdName[id].stok;
-            document.getElementById('prd_jmlajuan').value = prdName[id].jml_ajuan;
-            document.getElementById('prd_val').value = prdName[id].val;
-
-          }		
+  document.getElementById('prd_tanggal').value = prdName[id].tanggal_ajuan;
+  document.getElementById('prd_petugas').value = prdName[id].petugas;
+  document.getElementById('prd_kodebrng').value = prdName[id].kode_brg;
+  document.getElementById('prd_namabrg').value = prdName[id].nama_brg;
+  document.getElementById('prd_stokbrga').value = prdName[id].stok;
+  document.getElementById('prd_jmlajuan').value = prdName[id].jml_ajuan;
+  document.getElementById('prd_val').value = prdName[id].val;
+  
+  // Update max value for jml_keluar
+  document.getElementById('jml_keluar').max = prdName[id].jml_ajuan;
+}		
         </script>
 </div>
       <div class="form-group">
@@ -247,9 +249,10 @@ document.getElementById('cetakLink').addEventListener('click', function(event) {
   <input type="text" class="form-control" readonly="" id="prd_jmlajuan" name="jml_ajuan" aria-describedby="emailHelp" placeholder="Jumlah Ajuan">
 
 </div>
-          <div class="form-group">
+<div class="form-group">
   <label for="exampleInputEmail1">Jumlah Keluar</label>
-  <input type="text" class="form-control" id="exampleInputEmail1" name="jml_keluar" aria-describedby="emailHelp" placeholder="Masukkan Jumlah Keluar">
+  <input type="number" class="form-control" id="jml_keluar" name="jml_keluar" aria-describedby="emailHelp" 
+         placeholder="Masukkan Jumlah Keluar" max="" oninput="validateJmlKeluar()">
 </div>
         <div class="form-group">
   <label for="exampleInputEmail1">Admin</label>
@@ -321,6 +324,23 @@ $(document).ready(function() {
         window.open(url, '_blank');
     });
 });
+</script>
+<script>
+// Set max value when jml_ajuan changes
+document.getElementById('prd_jmlajuan').addEventListener('change', function() {
+  document.getElementById('jml_keluar').max = this.value;
+});
+
+// Validate input
+function validateJmlKeluar() {
+  var jmlAjuan = parseInt(document.getElementById('prd_jmlajuan').value);
+  var jmlKeluar = parseInt(document.getElementById('jml_keluar').value);
+  
+  if (jmlKeluar > jmlAjuan) {
+    alert('Jumlah keluar tidak boleh melebihi jumlah ajuan (' + jmlAjuan + ')');
+    document.getElementById('jml_keluar').value = jmlAjuan;
+  }
+}
 </script>
        <div class="row">
 
